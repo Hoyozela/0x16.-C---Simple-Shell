@@ -1,0 +1,20 @@
+#ifndef BUILTINS_H
+#define BUILTINS_H
+
+
+/* for the builtins.c */
+int builtins(general_t *info, char **args);
+int check_builtin(general_t *info, char **args);
+
+/* for the exit.c */
+void bin_exit(general_t *info, char **args);
+int number_controller(general_t *info, char *num);
+
+/* for the env.c */
+void bin_env(general_t *info, char **args);
+
+/*for the echo.c */
+void bin_echo(general_t *info, char **args);
+void echo_printer(int index, char *text, char **args);
+
+#endif /* BUILTINS_H */
