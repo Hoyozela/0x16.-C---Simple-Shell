@@ -30,6 +30,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 			status = _stat(args, path);
 			child_process(arrv, args, env, status, count);
 		}
+		
 		else
 		{
 			free(args);
