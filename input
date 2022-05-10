@@ -77,8 +77,8 @@ char **sparse_str(char *line, char **envi)
 	/*COMPARE TOKENS[0]*/
 	if ((_strcmp(tokens[0], "exit") == 0) && tokens[1] == NULL)
 	{
-		free(line); /*free memory*/
-		free(tokens);
+		free(line); /*free line memory*/
+		free(tokens);/*free tokens memory*/
 		exit(0);
 	}
 	if ((_strcmp(tokens[0], "env") == 0) && tokens[1] == NULL)
