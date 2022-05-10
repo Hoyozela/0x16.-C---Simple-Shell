@@ -1,9 +1,18 @@
 #include "shell.h"
 
 /**
- * _prompt - display prompt
+ * prompt - display prompt
+ *and wait for user input
  */
-void _prompt(void)
+void prompt(void)
 {
-	_puts(PROMPT);
+	char *prompt = {"{^_^} "};
+	char *buffer = getcwd(NULL, 0);
+
+	if (isatty(STDIN_FILENO))
+	{
+		write(STDOUT_FILENO, prompt, _strlen(prompt));
+	}
+	free(buffer);
 }
+
