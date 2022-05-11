@@ -14,6 +14,7 @@ extern char **environ;
 
 void handle_signal(int signal);
 int *_error(char *argv, int count, char *args);
+void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 
 int func_exit(char **args);
 void func_printenv(char **env);
