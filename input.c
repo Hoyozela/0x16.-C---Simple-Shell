@@ -43,7 +43,7 @@ char *read_input(void)
 }
 
 /**
- * sparse_str - devides a string into and array of strings
+ * sparse_str - divides a string into and array of strings
  * @line: the string to be separated
  * @envi: environment variable
  * Return: tokens on succes or EXIT_FAILURE if fails
