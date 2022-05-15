@@ -22,5 +22,19 @@ void prompt(void);
 int func_exit(char **args);
 void func_printenv(char **env);
 
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strlen(const char *s);
+int _strcmp(char *s1, char *s2);
+char *_strstr(char *str1, char *str2);
+char *_strdup(char *str);
+char *_itoa(int num, int base);
+
+char *read_input(void);
+char **sparse_str(char *line, char **env);
+int execute(char **args, char **argv, int count, char *line, char **env);
+void prompt(void);
+
+
 
 #endif
