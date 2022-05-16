@@ -33,6 +33,70 @@ char **_which(char *foundpath)
 		tokens = strtok(NULL, sparse);
 	}
 
+	
+/**
+ * child_process - executes a command if the path of it is an executable file
+ * @args: command to be executed
+ * @env: environment variable
+ * @status_main: status variable
+ * @av: name of program
+ * @cnt: count
+ * Return: 1
+ */
+int child_process(char **av, char **args, char **env, int status_main, int cnt)
+{
+	pid_t pid;
+	int status;
+
+	if (args == NULL)
+		return (-1);
+
+	pid = fork();
+	if (pid  < 0)
+	{
+		perror("./hsh: ");
+		exit(1);
+	}
+	else if (pid == 0)
+	{
+		if (execve(args[0], args, env) == -1)
+		{
+			_error(av[0], cnt, args[0]);
+			free(args);
+			exit(1);
+		}
+		exit(0);
+	}
+	else
+	{
+		if (status_main == 1)
+			free(args[0]);
+
+		free(args);
+		waitpid(pid, &status, WUNTRACED);
+	}
+	return (1);
+}
+
+/**
+ * search_path -  path to execute commands
+ * @environ: Environment variable
+ * Return: token_path
+ **/
+char **search_path(char **environ)
+{
+	int position = 0;
+	char **token_path;
+
+	for (; environ[position] != NULL ; position++)
+	{
+		if (environ[position][0] == 'P' && environ[position][2] == 'T')
+		{
+			token_path = _which(environ[position]);
+		}
+	}
+	return (token_path);
+}
 	return (dir);
 }
 
