@@ -32,7 +32,7 @@ char **_which(char *foundpath)
 		i++;
 		tokens = strtok(NULL, sparse);
 	}
-
+}
 	
 /**
  * child_process - executes a command if the path of it is an executable file
@@ -98,7 +98,7 @@ char **search_path(char **environ)
 	return (token_path);
 }
 	return (dir);
-}
+
 
 
 
