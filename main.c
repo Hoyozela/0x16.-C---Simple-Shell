@@ -8,7 +8,7 @@
  * @env: environment variable
  * Return: EXIT_SUCCESS
  */
-int main(int ac __attribute__((unused)), char **av, char **env)
+int main(int ac __attribute__((unused)), char **arrv, char **env)
 {
 	char *line;
 	char **args, **path;
