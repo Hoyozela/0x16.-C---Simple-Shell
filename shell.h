@@ -47,11 +47,6 @@ int _putchar(char c);
 
 void *_realloc(void *ptr, unsigned int new_size);
 int _count_point(char *buffer);
-void *_calloc(unsigned int nmemb, unsigned int size);
-char **search_path(char **environ);
-int _stat(char **cmd, char **path);
-char *str_concat(char *s1, char *s2);
-void _puts(char *str);
-int _putchar(char c);
+
 
 #endif
