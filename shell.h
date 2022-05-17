@@ -49,7 +49,5 @@ int _putchar(char c);
 
 /*update*/
 
-int child_process(char **av, char **args, char **env, int status_main, int cnt)
-
 
 #endif
