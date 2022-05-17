@@ -1,11 +1,5 @@
 #include "shell.h"
 
-/**
- * _which - identifies the path of the command(*args) that is being passed
- * to it
- * @foundpath: the command that is being passed to it
- * Return: the complete path of the command or 0 when it fails
- */
 char **_which(char *foundpath)
 {
 	int size = TOK_BUFSIZE, i = 0;
@@ -24,23 +18,26 @@ char **_which(char *foundpath)
 		return (NULL);
 	}
 
-	copy_path = _strdup(foundpath); /*copy string --> Path*/
-	tokens = strtok(copy_path, sparse); /*separate the string by a separator*/
+	copy_path = _strdup(foundpath); 
+	tokens = strtok(copy_path, sparse);
 	while (tokens != NULL)
 	{
 		dir[i] = tokens;
 		i++;
 		tokens = strtok(NULL, sparse);
 	}
+
+	return (dir);
 }
-	
+
+
 /**
  * child_process - executes a command if the path of it is an executable file
- * @args: command to be executed
+ * @args: the command to be executed
  * @env: environment variable
  * @status_main: status variable
  * @av: name of program
- * @cnt: count
+ * @cnt: count of prompt
  * Return: 1
  */
 int child_process(char **av, char **args, char **env, int status_main, int cnt)
@@ -79,7 +76,7 @@ int child_process(char **av, char **args, char **env, int status_main, int cnt)
 }
 
 /**
- * search_path -  path to execute commands
+ * search_path - gets the path to execute commands
  * @environ: Environment variable
  * Return: token_path
  **/
@@ -97,8 +94,6 @@ char **search_path(char **environ)
 	}
 	return (token_path);
 }
-	return (dir);
-
 
 
 
