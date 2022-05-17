@@ -19,6 +19,7 @@ void prompt(void);
 void *_calloc(unsigned int prmNumber, unsigned int prmSize);
 int func_exit(char **args);
 void func_printenv(char **env);
+int child_process(char **av, char **args, char **environ, int st, int countt);
 
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
