@@ -6,7 +6,7 @@
  */
 void prompt(void)
 {
-	char *prompt = {"{^_^} "};
+	char *prompt = {"{^ _ ^} "};
 	char *buffer = getcwd(NULL, 0);
 
 	if (isatty(STDIN_FILENO))
