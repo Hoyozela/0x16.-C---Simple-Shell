@@ -87,6 +87,10 @@ char **sparse_str(char *line, char **env)
 	return (tokens);
 }
 
+/**
+ * prompt - prints '$' and waits for a user's input
+ */
+
 void prompt(void)
 {
 	char *prompt = {"{^_^} "};
