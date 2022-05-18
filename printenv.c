@@ -4,10 +4,10 @@
  * func_printenv - prints the current environment
  * @envi: environment variable
  */
-void func_printenv(char **envi)
+void func_printenv(char **environ)
 {
 	int i = 0;
 
-	for (; envi[i] ; i++)
-		_puts(envi[i]); /*print tne environment*/
+	for (; environ[i] ; i++)
+		_puts(environ[i]); /*print enviroment*/
 }
