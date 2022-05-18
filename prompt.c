@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * prompt - display prompt
  *and wait for user input
