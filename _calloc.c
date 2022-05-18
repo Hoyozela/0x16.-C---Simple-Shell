@@ -2,15 +2,14 @@
 
 /**
  * _calloc - allocates memory for an array
- *
  * @prmNumber: character number
  * @prmSize: size of one case
- *
- * Return: allocate memory an initialize it
+ * Return: allocate memory 
  */
 void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 {
-	void *ptr;
+	char *ptr;
+	unsigned int i;
 
 	if (prmNumber == 0 || prmSize == 0)
 		return (NULL);
@@ -20,7 +19,8 @@ void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 	if (ptr == NULL)
 		return (NULL);
 
-	ptr = _memset(ptr, 0, prmNumber * prmSize);
+	for (i = 0; i < nmemb * size; i++)
+		p[i] = 0;
 
-	return (ptr);
+	return (p);
 }
