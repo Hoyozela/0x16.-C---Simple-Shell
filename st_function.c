@@ -156,13 +156,13 @@ char *str_concat(char *s1, char *s2)
  */
 int _strcmp(char *s1, char *s2)
 {
-	char *p3 = s1;
-	char *p4 = s2;
+	char *p1 = s1;
+	char *p2 = s2;
 
-	while (*p3 != '\0' && *p4 != '\0' && *p3 == *p4)
+	while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2)
 	{
-		p3++;
-		p4++;
+		p1++;
+		p2++;
 	}
-	return (*p3 - *p4);
+	return (*p1 - *p2);
 }
