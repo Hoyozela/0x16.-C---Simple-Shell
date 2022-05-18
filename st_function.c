@@ -42,20 +42,20 @@ int _strlen(const char *s)
  */
 char *_strdup(char *str)
 {
-	int k, l;
+	int i, j;
 	char *s = NULL;
 
 	if (str == NULL)
 		return (0);
-	for (k = 0; str[k]; k++)
+	for (i = 0; str[i]; i++)
 		;
-	k++;
-	s = malloc(k * sizeof(char *));
+	i++;
+	s = malloc(i * sizeof(char *));
 	if (!s)
 		return (NULL);
-	for (l = 0; l < k; l++)
+	for (j = 0; j < i; j++)
 	{
-		s[l] = str[l];
+		s[j] = str[j];
 	}
 	return (s);
 }
@@ -63,10 +63,11 @@ char *_strdup(char *str)
 /**
  * _itoa - integer to ascii
  * @num: num
- * @b: base
+ * @base: base
  * Return: char
+ * Reference: https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407
  **/
-char *_itoa(int num, int b)
+char *_itoa(int num, int base)
 {
 	static char *array = "0123456789abcdef";
 	static char buffer[50];
@@ -83,15 +84,14 @@ char *_itoa(int num, int b)
 	*ptr = '\0';
 
 	do      {
-		*--ptr = array[n % b];
-		n /= b;
+		*--ptr = array[n % base];
+		n /= base;
 	} while (n != 0);
 
 	if (sign)
 		*--ptr = sign;
 	return (ptr);
 }
-
 /**
  * _putchar - writes c to stdout
  * @c: character to print
