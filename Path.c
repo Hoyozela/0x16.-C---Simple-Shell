@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * _which - identifies the path of the command(*args) that is being passed
+ * to it
+ * @foundpath:  command that is being passed to it
+ * Return: complete path of the command or 0 on failure
+ */
 char **_which(char *foundpath)
 {
 	int size = TOK_BUFSIZE, i = 0;
@@ -13,9 +18,7 @@ char **_which(char *foundpath)
 	}
 	if (dir == NULL)
 	{
-		free(foundpath);
-		perror("Error allocated memory");
-		return (NULL);
+		free(foundpath);3
 	}
 
 	copy_path = _strdup(foundpath); 
