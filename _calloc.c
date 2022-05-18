@@ -20,7 +20,7 @@ void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 	if (ptr == NULL)
 		return (NULL);
 
-	ptr = memset(ptr, 0, prmNumber * prmSize);
+	ptr = _memset(ptr, 0, prmNumber * prmSize);
 
 	return (ptr);
 }
