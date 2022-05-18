@@ -18,7 +18,7 @@ char **_which(char *foundpath)
 	}
 	if (dir == NULL)
 	{
-		free(foundpath);3
+		free(foundpath);
 	}
 
 	copy_path = _strdup(foundpath); 
