@@ -19,8 +19,8 @@ void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 	if (ptr == NULL)
 		return (NULL);
 
-	for (i = 0; i < nmemb * size; i++)
-		p[i] = 0;
+	for (i = 0; i < prmSize * prmNumber; i++)
+		ptr[i] = 0;
 
-	return (p);
+	return (ptr);
 }
