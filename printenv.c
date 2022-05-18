@@ -2,7 +2,7 @@
 
 /**
  * func_printenv - prints the current environment
- * @envi: environment variable
+ * @environ: environment variable
  */
 void func_printenv(char **environ)
 {
