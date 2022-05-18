@@ -45,10 +45,10 @@ char *read_input(void)
 /**
  * sparse_str - divides a string into and array of strings
  * @line: the string to be separated
- * @envi: environment variable
+ * @env: environment variable
  * Return: tokens on succes or EXIT_FAILURE if fails
  */
-char **sparse_str(char *line, char **envi)
+char **sparse_str(char *line, char **env)
 {
 	int bufsize = TOK_BUFSIZE, position = 0;
 	char **tokens;
@@ -61,7 +61,7 @@ char **sparse_str(char *line, char **envi)
 	tokens = _calloc(sizeof(char *), bufsize);
 	if (!tokens)
 	{
-		perror("error");/*error stored in ern*/
+		perror("error");/*error stored */
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(line, TOK_DELIM);
@@ -82,8 +82,20 @@ char **sparse_str(char *line, char **envi)
 		exit(0);
 	}
 	if ((_strcmp(tokens[0], "env") == 0) && tokens[1] == NULL)
-		func_printenv(envi);      /*find the environment*/
+		func_printenv(env);      /*find the environment*/
 
 	return (tokens);
+}
+
+void prompt(void)
+{
+	char *prompt = {"{^_^} "};
+	char *buffer = getcwd(NULL, 0);
+
+	if (isatty(STDIN_FILENO))
+	{
+		write(STDOUT_FILENO, prompt, _strlen(prompt));
+	}
+	free(buffer);
 }
 
