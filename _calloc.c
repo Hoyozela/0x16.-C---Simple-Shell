@@ -4,7 +4,7 @@
  * _calloc - allocates memory for an array
  * @prmNumber: character number
  * @prmSize: size of one case
- * Return: allocate memory 
+ *return: allocate memory
  */
 void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 {
