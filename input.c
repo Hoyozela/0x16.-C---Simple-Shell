@@ -72,7 +72,7 @@ char **sparse_str(char *line, char **env)
 		token = strtok(NULL, TOK_DELIM);
 	}
 	if (tokens[0] == NULL)
-		tokens[position] = "\n"; 
+		tokens[position] = "\n";
 
 	/*COMPARE TOKENS[0]*/
 	if ((_strcmp(tokens[0], "exit") == 0) && tokens[1] == NULL)
