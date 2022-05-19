@@ -20,7 +20,6 @@ char **_which(char *foundpath)
 	{
 		free(foundpath);
 	}
-
 	copy_path = _strdup(foundpath); 
 	tokens = strtok(copy_path, sparse);
 	while (tokens != NULL)
